@@ -9,7 +9,21 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("GameOfLife")
+set(CMAKE_HOST_SYSTEM Windows)
+
+# IMPORTANT: HERE WE DEFINE THE VARIABLES TO BE USED THROUGHOUT THE CMAKE FILE
+set(PROJECT_NAME    GameOfLife)
+set(EXECUTABLE_NAME Simulation)
+set(LIB_NAME        gameLib)
+
+project(${PROJECT_NAME} VERSION 0.0.1 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD          20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS        ON)
+
+find_package(OpenMP)
 
 # Include sub-projects.
-add_subdirectory ("GameOfLife")
+add_subdirectory (src)
+add_subdirectory (app)
