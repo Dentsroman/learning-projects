@@ -1,0 +1,11 @@
+playwright
+pytest
+pytest-playwright
+pytest-parallel
+pytest-rerunfailures
+requests
+O365
+pyotp
+pyodbc
+pandas
+numpy

@@ -5,7 +5,8 @@ clients = [
     {'id': 1, 'name': 'Carmen'},
     {'id': 2, 'name': 'Tin'},
     {'id': 3, 'name': 'Vicente'},
-    {'id': 4, 'name': 'Luna'}
+    {'id': 4, 'name': 'Luna'},
+    {'id': 5, 'name': 'Ñanti'}
 ]
 
 
@@ -18,9 +19,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(json.dumps(message).encode())
 
     def do_GET(self):
-        if self.path == '/clients':
+        if self.path == '/json/clients':
             self._send_response(200, clients)
-        elif self.path.startswith('/clients/'):
+        elif self.path.startswith('/json/clients/'):
             try:
                 client_id = int(self.path.split('/')[-1])
                 # Generator expression
@@ -37,7 +38,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 
     def do_POST(self):
-        if self.path == '/clients':
+        if self.path == '/json/clients':
             content_length = int(self.headers['Content-Length'])
             post_data = self.rfile.read(content_length)
             new_client = json.loads(post_data)
@@ -48,7 +49,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 
     def do_PUT(self):
-        if self.path.startswith('/clients/'):
+        if self.path.startswith('/json/clients/'):
             try:
                 client_id = int()
                 client = next((client for client in clients if client['id'] == client_id), None)
@@ -67,7 +68,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 
     def do_DELETE(self):
-        if self.path.startswith('/clients/'):
+        if self.path.startswith('/json/clients/'):
             try:
                 client_id = int(self.path.split('/')[-1])
                 global clients

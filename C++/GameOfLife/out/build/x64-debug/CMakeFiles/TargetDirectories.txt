@@ -1,0 +1,5 @@
+C:/Users/William Bevia/LearningRepo/learning-projects/C++/GameOfLife/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/William Bevia/LearningRepo/learning-projects/C++/GameOfLife/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/William Bevia/LearningRepo/learning-projects/C++/GameOfLife/out/build/x64-debug/GameOfLife/CMakeFiles/GameOfLife.dir
+C:/Users/William Bevia/LearningRepo/learning-projects/C++/GameOfLife/out/build/x64-debug/GameOfLife/CMakeFiles/edit_cache.dir
+C:/Users/William Bevia/LearningRepo/learning-projects/C++/GameOfLife/out/build/x64-debug/GameOfLife/CMakeFiles/rebuild_cache.dir
