@@ -1,0 +1,12 @@
+## Ignore general files in repo
+
+# User files
+*.suo
+*.user
+
+# Build results
+x64/
+
+
+# Visual studio cache
+.vs/

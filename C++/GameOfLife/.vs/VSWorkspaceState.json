@@ -13,8 +13,9 @@
   },
   "ExpandedNodes": [
     "",
-    "\\GameOfLife"
+    "\\app",
+    "\\src"
   ],
-  "SelectedNode": "\\GameOfLife\\GameOfLife.cpp",
+  "SelectedNode": "\\Setup.py",
   "PreviewInSolutionExplorer": false
 }

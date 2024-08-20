@@ -9,8 +9,6 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-set(CMAKE_HOST_SYSTEM Windows)
-
 # IMPORTANT: HERE WE DEFINE THE VARIABLES TO BE USED THROUGHOUT THE CMAKE FILE
 set(PROJECT_NAME    GameOfLife)
 set(EXECUTABLE_NAME Simulation)
@@ -22,6 +20,20 @@ set(CMAKE_CXX_STANDARD          20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS        ON)
 
+# CMAKE OPTIONS
+option(USE_CONAN "Whether to use Conan" ON)
+
+if(POLICY CMP0091)
+  cmake_policy(SET CMP0091 NEW)
+endif()
+
+# Use Conan-generated build info
+include(${CMAKE_SOURCE_DIR}/ext/conan_toolchain.cmake)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+
+list(APPEND CMAKE_PREFIX_PATH ${CMAKE_SOURCE_DIR}/ext)
+
+# Find OpenMP library
 find_package(OpenMP)
 
 # Include sub-projects.
