@@ -1,0 +1,34 @@
+{
+	"id": 1,
+	"name": "scenario-1",
+	"sim_settings": {
+		"canvas_size": [ 256, 256 ],
+		"max_cell_num": 20000,
+		"cell_groups": [
+			{
+				"id": 0,
+				"name": "red_group",
+				"color": "red",
+				"type": "predator",
+				"initial_cell_num": 100,
+				"reproduction_multiplier": 0.6,
+				"placement": "grouped",
+				"personality": "lone",
+				"movement_type": "lone",
+				"randomness_multiplier": 1.2
+			},
+			{
+				"id": 1,
+				"name": "blue_group",
+				"color": "blue",
+				"type": "vegetarian",
+				"initial_cell_num": 1000,
+				"reproduction_multiplier": "1.5",
+				"placement": "grouped",
+				"personality": "comunal",
+				"movement_type": "herd",
+				"randomness_multiplier": 0.8
+			}
+		]
+	}
+}
