@@ -5,8 +5,6 @@
 #include <GLFW/glfw3.h>
 #include <vector>
 #include <string>
-#include glfw
-#include opengl
 
 class Renderer {
 public:

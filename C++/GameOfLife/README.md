@@ -5,16 +5,19 @@ This project contains aims to recreate the famous game of life project in C++
 
 ### Dependency installation:
 1- Install conan
-pip install --user -U conan
 ```bash
+pip install --user -U conan
+```
 
 2- Create a profile
-conan profile detect --force
 ```bash
+conan profile detect --force
+```
 
 3- Run installation of dependencies
 Run the setup.py script to install the dependencies
-python setup.py
 ```bash
+python setup.py
+```
 
 #### Run guide
