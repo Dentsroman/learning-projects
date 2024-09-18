@@ -22,7 +22,7 @@ private:
 
 
     // Private helper functions
-    int countNeighbors(int x, int y);
+    int16_t countNeighbors(int x, int y);
 };
 
 #endif //CELL_H
