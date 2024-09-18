@@ -1,18 +1,13 @@
 from conan import ConanFile
-from conan.tools.cmake import CMakeToolchain
+from conan.tools.cmake import CMakeToolchain, CMakeDeps
 
 
 class ConanDependencies(ConanFile):
     
     settings = "os", "compiler", "build_type", "arch"
-    generators = "CMakeDeps"
+    generators = "CMakeDeps", "CMakeToolchain"
     
     def requirements(self):
         self.requires("glfw/3.3.4")
+        self.requires("glew/2.1.0")
         self.requires("opengl/system")
-        
-
-    def generate(self):
-        tc = CMakeToolchain(self)
-        tc.user_presets_path = False
-        tc.generate()

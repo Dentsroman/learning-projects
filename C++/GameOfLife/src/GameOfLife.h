@@ -6,7 +6,7 @@
 #include <iostream>
 #include <memory>
 #include <chrono>
-#include clfw
+#include glfw
 #include opengl
 
 

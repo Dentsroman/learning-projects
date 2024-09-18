@@ -29,7 +29,6 @@ endif()
 
 # Use Conan-generated build info
 include(${CMAKE_SOURCE_DIR}/ext/conan_toolchain.cmake)
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 
 list(APPEND CMAKE_PREFIX_PATH ${CMAKE_SOURCE_DIR}/ext)
 

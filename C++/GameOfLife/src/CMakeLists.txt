@@ -19,7 +19,7 @@ set(LIBRARY_HEADERS
 
 add_library(${LIB_NAME} STATIC ${LIBRARY_HEADERS} ${LIBRARY_SOURCES})
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+include(${CMAKE_SOURCE_DIR}/ext/conan_toolchain.cmake)
 
 target_include_directories(
     ${LIB_NAME} PUBLIC 

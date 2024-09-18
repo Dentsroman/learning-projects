@@ -1,32 +1,57 @@
-//Will contain the loop of functions the engine must do, like physics calculations, rendering and game logic functions
+//Will contain the loop of functions the engine must do, like physics calculations and game logic functions
 #include "Loop.h"
 
-Loop::Loop() :
-    previousTime(std::chrono::high_resolution_clock::now()),  // Initialize previousTime to the current time
-    accumulator(0.0f),                                        // Accumulator starts at 0
-    fixedTimeStep(1.0f / 60.0f)                               // Set a fixed time step, e.g., 60 FPS (fixed update)
-{
-    // Initialization or debug messages if needed
-    std::cout << "GameEngine initialized with a fixed timestep of " << fixedTimeStep << " seconds." << std::endl;
+Loop::Loop() : isRunning(false) {}
+
+Loop::~Loop() = default;
+
+Loop& Loop::getInstance() {
+    static Loop instance;
+    return instance;
+}
+
+void Loop::execute() {
+    std::lock_guard<std::mutex> guard(lock);
+    if (isRunning) {
+        return;
+    }
+    isRunning = true;
+
+    try {
+        while (isRunning) {
+			start();
+			spawn();
+			move();
+			render();
+			sleep_for_frame_cap(60);
+        }
+    }
+    catch (...) {
+        isRunning = false;
+        throw;
+    }
+
+    isRunning = false;
+}
+
+Loop::get_delta_time() {
+
+    const float fixedDeltaTime = 1.0f / 60.0f; // Fixed delta time for 60 FPS
+    auto previousTime = std::chrono::high_resolution_clock::now();
+    float accumulatedTime = 0.0f;
+
+
 }
 
 Loop::start(){
 
 }
 
-Loop::on_enable() {
+Loop::spawn() {
 
 }
 
-Loop::on_initialize() {
-
-}
-
-Loop::fixed_update() {
-
-}
-
-Loop::update(float deltaTime) {
+Loop::move() {
 
 }
 
@@ -34,6 +59,6 @@ Loop::render() {
 
 }
 
-Loop::on_disable() {
+Loop::sleep_for_frame_cap(int fps) {
 
 }

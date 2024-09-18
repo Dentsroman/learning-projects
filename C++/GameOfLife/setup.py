@@ -35,7 +35,6 @@ def build_compile_execute(config: str = "Debug", cores: str = "2", clean_start: 
             print(f"Error executing command '{command}': {e}")
            
 
-# Note that this does not mean you can't define the case_definition.cuh by yourself!
 if __name__ == "__main__":
     
     filename = "Shlong"
