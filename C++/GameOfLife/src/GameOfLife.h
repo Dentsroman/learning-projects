@@ -6,8 +6,6 @@
 #include <iostream>
 #include <memory>
 #include <chrono>
-#include glfw
-#include opengl
 
 
 // TODO: Reference additional headers your program requires here.

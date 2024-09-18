@@ -20,6 +20,10 @@ set(CMAKE_CXX_STANDARD          20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS        ON)
 
+if(CMAKE_SYSTEM_NAME MATCHES Windows)
+    set(CMAKE_GENERATOR "Visual Studio 17 2022")
+endif()
+
 # CMAKE OPTIONS
 option(USE_CONAN "Whether to use Conan" ON)
 
