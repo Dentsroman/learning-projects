@@ -13,7 +13,7 @@ set(LIBRARY_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/GameOfLife.cpp"
     # "${CMAKE_CURRENT_SOURCE_DIR}/engine/Cell.cpp"
     # "${CMAKE_CURRENT_SOURCE_DIR}/engine/Loop.cpp"
-    # "${CMAKE_CURRENT_SOURCE_DIR}/engine/Orchestrator.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/engine/Orchestrator.cpp"
     # "${CMAKE_CURRENT_SOURCE_DIR}/rendering/Renderer.cpp"
     # "${CMAKE_CURRENT_SOURCE_DIR}/utils/"
 )
@@ -22,7 +22,7 @@ set(LIBRARY_HEADERS
     "${CMAKE_CURRENT_SOURCE_DIR}/GameOfLife.h"
     #"${CMAKE_CURRENT_SOURCE_DIR}/engine/Cell.h"
     #"${CMAKE_CURRENT_SOURCE_DIR}/engine/Loop.h"
-    #"${CMAKE_CURRENT_SOURCE_DIR}/engine/Orchestrator.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/engine/Orchestrator.h"
     #"${CMAKE_CURRENT_SOURCE_DIR}/rendering/Renderer.h"
     #"${CMAKE_CURRENT_SOURCE_DIR}/utils/"
 )

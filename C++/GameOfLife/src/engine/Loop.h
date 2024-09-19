@@ -14,10 +14,8 @@ public:
 
 protected:
 	// Main loop functions
-    void start();
 	void spawn();
     void move();
-    void render();
 
 private:
     // Utility functions for the main loop

@@ -11,3 +11,4 @@ class ConanDependencies(ConanFile):
         self.requires("glfw/3.3.4")
         self.requires("glew/2.1.0")
         self.requires("opengl/system")
+        self.requires("nlohmann_json/3.10.5")

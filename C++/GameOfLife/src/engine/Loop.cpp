@@ -1,4 +1,5 @@
 //Will contain the loop of functions the engine must do, like physics calculations and game logic functions
+//Orchestrator functions will be called by the Loop class
 #include "Loop.h"
 
 Loop::Loop() : isRunning(false) {}
@@ -19,10 +20,8 @@ void Loop::execute() {
 
     try {
         while (isRunning) {
-			start();
 			spawn();
 			move();
-			render();
 			sleep_for_frame_cap(60);
         }
     }
@@ -43,19 +42,11 @@ Loop::get_delta_time() {
 
 }
 
-Loop::start(){
-
-}
-
 Loop::spawn() {
 
 }
 
 Loop::move() {
-
-}
-
-Loop::render() {
 
 }
 

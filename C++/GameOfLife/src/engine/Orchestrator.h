@@ -6,6 +6,7 @@
 #include <chrono>
 #include <cstdint>
 #include <mutex>
+#include <nlohmann/json.hpp>
 
 class Orchestrator {
 public:
@@ -24,10 +25,10 @@ private:
 	bool isRunning;
 	std::mutex lock;
 
-	std::string config;
-	std::string read_config(const std::string& config_path);
+	json config_json;
+	int read_config(const std::string& config_path, json& config_json);
 
-	void initial_setup(std::string config);
+	void initial_setup(json config_json);
 	void get_cell_positions();
 	void check_adjacent_cells();
 };
