@@ -1,7 +1,7 @@
 ﻿# CMakeList.txt : Top-level CMake project file, do global configuration
 # and include sub-projects here.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.27)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -26,15 +26,17 @@ endif()
 
 # CMAKE OPTIONS
 option(USE_CONAN "Whether to use Conan" ON)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/ext")
 
 if(POLICY CMP0091)
   cmake_policy(SET CMP0091 NEW)
 endif()
 
 # Use Conan-generated build info
-include(${CMAKE_SOURCE_DIR}/ext/conan_toolchain.cmake)
-
-list(APPEND CMAKE_PREFIX_PATH ${CMAKE_SOURCE_DIR}/ext)
+if(USE_CONAN)
+message(STATUS "Using Conan")
+include("${CMAKE_CURRENT_SOURCE_DIR}/ext/conan_toolchain.cmake")
+endif()
 
 # Find OpenMP library
 find_package(OpenMP)

@@ -5,7 +5,7 @@ import argparse
 import os
 
 
-def build_compile_execute(config: str = "Debug", cores: str = "2", clean_start: bool = True):
+def build_compile_execute(config: str = "Release", cores: str = "2", clean_start: bool = True):
 
     my_wd = os.getcwd()
 
@@ -23,7 +23,7 @@ def build_compile_execute(config: str = "Debug", cores: str = "2", clean_start: 
         print(my_wd + "/out has been deleted")
         subprocess.run("mkdir out", shell=True)        
         
-    commands = ["cmake -S . -B ./build"]
+    commands = [f"cmake -S . -B ./build -DCMAKE_BUILD_TYPE={config} -DCMAKE_TOOLCHAIN_FILE=\"ext/conan_toolchain.cmake\""]
     commands.extend([
             f"cmake --build ./build --config {config} --parallel {cores}", ""
         ])

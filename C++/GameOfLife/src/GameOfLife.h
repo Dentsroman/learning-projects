@@ -6,6 +6,8 @@
 #include <iostream>
 #include <memory>
 #include <chrono>
+#include <nlohmann/json.hpp>
+#include <GL/glew.h>
 
 
 // TODO: Reference additional headers your program requires here.
