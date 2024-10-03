@@ -1,0 +1,58 @@
+{
+    "Machine": {
+        "name": "Vending Machine",
+        "location": "1234 Main St",
+        "products": [
+        {
+            "name": "Coke",
+            "price": 1.25,
+            "quantity": 10
+        },
+        {
+            "name": "Pepsi",
+            "price": 1.25,
+            "quantity": 10
+        },
+        {
+            "name": "Sprite",
+            "price": 1.25,
+            "quantity": 10
+        },
+        {
+            "name": "Fanta",
+            "price": 1.25,
+            "quantity": 10
+        },
+        {
+            "name": "Dr. Pepper",
+            "price": 1.25,
+            "quantity": 10
+        },
+        {
+            "name": "Mountain Dew",
+            "price": 1.25,
+            "quantity": 10
+        },
+        {
+            "name": "Water",
+            "price": 1.00,
+            "quantity": 10
+        },
+        {
+            "name": "Gatorade",
+            "price": 1.50,
+            "quantity": 10
+        },
+        {
+            "name": "Red Bull",
+            "price": 2.00,
+            "quantity": 10
+        },
+        {
+            "name": "Monster",
+            "price": 2.00,
+            "quantity": 10
+        }
+        ]
+    }
+}
