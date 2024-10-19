@@ -1,3 +1,5 @@
+package vendingmachine;
+
 public class Product {
 
     public String name;
@@ -19,4 +21,5 @@ public class Product {
     public int getQuantity() {
         return quantity;
     }
+
 }

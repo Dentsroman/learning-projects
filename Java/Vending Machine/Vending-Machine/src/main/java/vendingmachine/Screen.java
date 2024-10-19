@@ -1,3 +1,5 @@
+package vendingmachine;
+
 public class Screen {
     public void screenFlow() {
         System.out.println("Welcome to the Vending Machine!");
